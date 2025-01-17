@@ -25,13 +25,26 @@ class BaseChainSetting(NamedTuple):
                 f'  - Exit fork version: {self.EXIT_FORK_VERSION.hex()}\n'
                 f'  - Genesis validators root: {gvr_value}')
 
-
+GNOSIS = 'gnosis'
+CHIADO = 'chiado'
 MAINNET = 'mainnet'
 SEPOLIA = 'sepolia'
 HOLESKY = 'holesky'
 MEKONG = 'mekong'
 EPHEMERY = 'ephemery'
 
+# Gnosis setting
+GnosisSetting = BaseChainSetting(
+    NETWORK_NAME=GNOSIS,
+    GENESIS_FORK_VERSION=bytes.fromhex('00000064'),
+    EXIT_FORK_VERSION=bytes.fromhex('2efe91ba'),
+    GENESIS_VALIDATORS_ROOT=bytes.fromhex('f5dcb5564e829aab27264b9becd5dfaa017085611224cb3036f573368dbb9d47'))
+# Chiado setting
+ChiadoSetting = BaseChainSetting(
+    NETWORK_NAME=CHIADO,
+    GENESIS_FORK_VERSION=bytes.fromhex('0000006F'),
+    EXIT_FORK_VERSION=bytes.fromhex('a15a4252'),
+    GENESIS_VALIDATORS_ROOT=bytes.fromhex('9d642dac73058fbf39c0ae41ab1e34e4d889043cb199851ded7095bc99eb4c1e'))
 # Mainnet setting
 MainnetSetting = BaseChainSetting(
     NETWORK_NAME=MAINNET,
@@ -69,6 +82,8 @@ EphemerySetting = BaseChainSetting(
 
 
 ALL_CHAINS: Dict[str, BaseChainSetting] = {
+    GNOSIS: GnosisSetting,
+    CHIADO: ChiadoSetting,
     MAINNET: MainnetSetting,
     SEPOLIA: SepoliaSetting,
     HOLESKY: HoleskySetting,
