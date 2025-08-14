@@ -193,7 +193,7 @@
 <ol>
 <li>
 <p><strong>Clone the Repository</strong></p>
-<pre><code class="language-sh">git clone https://github.com/eth-educators/ethstaker-deposit-cli.git
+<pre><code class="language-sh">git clone https://github.com/ethstaker/ethstaker-deposit-cli.git
 </code></pre>
 </li>
 <li>
@@ -229,6 +229,10 @@ source .venv/bin/activate
 </code></pre>
 <p>Enable it for your <code>git commit</code> workflow:</p>
 <pre><code class="language-sh">pre-commit install
+</code></pre>
+<p>If you are using <code>uv</code>, you can also install it using:</p>
+<pre><code class="language-console">uv sync --all-extras
+uv run pre-commit install
 </code></pre>
 </li>
 </ol>
